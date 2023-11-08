@@ -1,7 +1,16 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const StyledBanner = styled.div`
+interface BannerProps {
+  direction?: string;
+  align?: string;
+  justify?: string;
+  background?: string;
+  width?: string;
+  height?: string;
+}
+
+const StyledBanner = styled.div<BannerProps>`
   display: flex;
   flex-direction: ${props => props.direction || 'column'};
   align-items: ${props => props.align || 'center'};

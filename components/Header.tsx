@@ -1,10 +1,16 @@
 import React from "react"
 import styled from 'styled-components';
-import MyLink from "./Link";
-import Links from "./Navigate";
 import Navigate from "./Navigate";
 
-const StyledHeader = styled.header`
+interface HeaderProps {
+  align?: string;
+  justify?: string;
+  background?: string;
+  width?: string;
+  height?: string;
+}
+
+const StyledHeader = styled.header<HeaderProps>`
   display: flex;
   align-items: ${props => props.align || 'center'};
   justify-content: ${props => props.justify || 'center'};
