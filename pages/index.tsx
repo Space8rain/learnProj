@@ -1,16 +1,48 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import React from 'react'
-import Page from '../components/Page';
+import MainPage from '../components/MainPage';
 import Header from '../components/Header';
-import { styled } from 'styled-components';
-import Flex from '../components/Flex';
+import styled from 'styled-components';
+import { createGlobalStyle } from "styled-components";
+import Wrapper from '../components/Wrapper';
 import Banner from '../components/Banner';
+
+const GlobalStyle = createGlobalStyle`
+:root {
+  /* Fonts */
+  --fonts-Lato: Lato, sans-serif;
+  --fonts-Gilroy: Gilroy;
+  --fonts-Giorgio: Giorgio Sans LCG;
+
+  /* Fonts: Weight */
+  --fonts-weights-normal: 400;
+  --fonts-weights-semiBold: 600;
+  --fonts-weights-bold: 700;
+
+  /* Colors */
+  --text-primary: #FFF;
+  --text-secondary: #A1A1AA;
+  --text-on-light-bg: #010101;
+  --Medium-grey: #9D9D9D;
+  --background-background: #010101;
+  --Rich-black: #121212;
+  --background-yellow: #F8E800;
+  --background-red: #FF0025;
+  --background-foreground: #121212;
+
+  /* Borders */
+  --border-r-S: 8px;
+  --border-r-M: 12px;
+  --border-r-X: 20px;
+
+}`;
 
 const AppWrapper = styled.div`
   width: 100%;
   min-height: 100vh;
+  background-color: var(--background-background);
+  color: var(--text-primary);
+  overflow: hidden;
 `;
 
 export default function Home() {
@@ -20,83 +52,17 @@ export default function Home() {
         <title>Test betboom</title>
         <meta name="description" content="test task" />
         <link rel="icon" href="/favicon.ico" />
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
       </Head>
 
+      <GlobalStyle />
       <AppWrapper>
-        <Flex>
+        <Wrapper>
           <Header />
           <Banner  background='#FF0025'/>
-          <Page title='Welcome !' />
-        </Flex> 
+          <MainPage />
+        </Wrapper> 
       </AppWrapper>
-
     </>
   )
-  // return (
-  //   <div className={styles.container}>
-  //     <Head>
-  //       <title>Test betboom</title>
-  //       <meta name="description" content="test task" />
-  //       <link rel="icon" href="/favicon.ico" />
-  //     </Head>
-
-  //     <main>
-  //       <h1>Hello !</h1>
-  //     </main>
-
-  //     <main className={styles.main}>
-  //       <h1 className={styles.title}>
-  //         Welcome to <a href="https://nextjs.org">Next.js!</a>
-  //       </h1>
-
-  //       <p className={styles.description}>
-  //         Get started by editing{' '}
-  //         <code className={styles.code}>pages/index.js</code>
-  //       </p>
-
-  //       <div className={styles.grid}>
-  //         <a href="https://nextjs.org/docs" className={styles.card}>
-  //           <h2>Documentation &rarr;</h2>
-  //           <p>Find in-depth information about Next.js features and API.</p>
-  //         </a>
-
-  //         <a href="https://nextjs.org/learn" className={styles.card}>
-  //           <h2>Learn &rarr;</h2>
-  //           <p>Learn about Next.js in an interactive course with quizzes!</p>
-  //         </a>
-
-  //         <a
-  //           href="https://github.com/vercel/next.js/tree/canary/examples"
-  //           className={styles.card}
-  //         >
-  //           <h2>Examples &rarr;</h2>
-  //           <p>Discover and deploy boilerplate example Next.js projects.</p>
-  //         </a>
-
-  //         <a
-  //           href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-  //           className={styles.card}
-  //         >
-  //           <h2>Deploy &rarr;</h2>
-  //           <p>
-  //             Instantly deploy your Next.js site to a public URL with Vercel.
-  //           </p>
-  //         </a>
-  //       </div>
-  //     </main>
-
-  //     <footer className={styles.footer}>
-  //       <a
-  //         href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         Powered by{' '}
-  //         <span className={styles.logo}>
-  //           <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-  //         </span>
-  //       </a>
-  //     </footer>
-  //   </div>
-  // )
 }

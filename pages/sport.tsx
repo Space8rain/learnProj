@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components';
 import Header from '../components/Header';
-import Flex from '../components/Flex';
-import Page from '../components/Page';
+import Flex from '../components/Wrapper';
+import Page from '../components/MainPage';
 
 const About = ({ title }) => {
   return (
     <Flex>
       <Header />
-      <Page title='О нас' />
+      <Page title='Sport' />
     </Flex>
   );
 }

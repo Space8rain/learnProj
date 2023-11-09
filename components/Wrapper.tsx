@@ -2,24 +2,29 @@ import React from 'react'
 import styled from 'styled-components';
 
 interface FlexProps {
+  display?: string;
   direction?: string;
   align?: string;
   justify?: string;
   margin?: string;
+  padding?: string;
+  gap?: string;
 }
 
-const StyledFlex = styled.div<FlexProps>`
-  display: flex;
+const StyledWrapper = styled.div<FlexProps>`
+  display: ${props => props.display || 'flex'};
   flex-direction: ${props => props.direction || 'column'};
   align-items: ${props => props.align || 'center'};
   justify-content: ${props => props.justify || 'center'};
   margin: ${({margin}) => margin || '0'};
+  padding: ${({padding}) => padding || '0'};
+  gap: ${({gap}) => gap || '0'};
 `;
 
-const Flex = (props) => {
+const Wrapper = (props) => {
   return (
-    <StyledFlex {...props} />
+    <StyledWrapper {...props} />
   );
 }
 
-export default Flex;
+export default Wrapper;

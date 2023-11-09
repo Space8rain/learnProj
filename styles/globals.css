@@ -1,3 +1,16 @@
+@font-face {
+  font-family: 'Giorgio Sans LCG';
+  src: url(../src/fonts/Giorgio\ Sans\ LCG\ Bold.otf);
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url(../src/fonts/Gilroy-Bold.otf);
+  font-weight: 700;
+  font-style: normal;
+}
+
 html,
 body {
   padding: 0;
@@ -13,9 +26,11 @@ a {
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
@@ -23,4 +38,4 @@ a {
     color: white;
     background: black;
   }
-}
+} */

@@ -21,10 +21,19 @@ const Navigate = () => {
     <Nav>
       <ul>
           <li>
-            <Link href='/' >Главная</Link>
+            <Link href='/sport' >Спорт</Link>
           </li>
           <li>
-            <Link href='/about' >О нас</Link>
+            <Link href='/live' >Live</Link>
+          </li>
+          <li>
+            <Link href='/kibersport' >Киберспорт</Link>
+          </li>
+          <li>
+            <Link href='/fastbet' >Быстрые ставки</Link>
+          </li>
+          <li>
+            <Link href='/promo' >Акции и бонусы</Link>
           </li>
       </ul>
     </Nav>
