@@ -4,25 +4,12 @@ import styled from 'styled-components';
 import bannerImage from '../src/images/banner_image.png';
 import Wrapper from './Wrapper';
 import Button from './Button';
+import BgImage from './BgImage';
+import Link from 'next/link';
 
-interface BannerProps {
-  direction?: string;
-  align?: string;
-  justify?: string;
-  background?: string;
-  width?: string;
-  height?: string;
-};
 
-const StyledBanner = styled.section<BannerProps>`
-  display: flex;
-  flex-direction: ${props => props.direction || 'row'};
-  align-items: ${props => props.align || 'center'};
-  justify-content: ${props => props.justify || 'center'};
-  background-color: ${props => props.background || 'black'};
-  width: ${props => props.width || '100%'};
-  height: ${props => props.height || '655px'};
-  z-index: 2;
+const StyledBanner = styled(Wrapper)`
+  height: 655px;
 `;
 
 const BannerTitle = styled.h1`
@@ -40,17 +27,31 @@ const BannerTitle = styled.h1`
   }
 `;
 
+
 const Banner = (props) => {
   return (
-    <StyledBanner {...props} width='1206px'>
-      <Wrapper gap='40px' margin='0px -350px 0px 0px' align='left'>
-        <Wrapper gap='16px' align='left'>
-          <BannerTitle>Фрибеты за купоны</BannerTitle>
-          <p>С 31 октября по 13 ноября собирай экспрессы в разделе «Спорт», получай купоны и обменивай их на фрибеты!</p>
+    <StyledBanner {...props} >
+      <Wrapper width='1216px'>
+        <BgImage 
+          imageUrl={bannerImage.src}
+          width={bannerImage.width}
+          height={bannerImage.height}
+          top='-142px'
+          left='272px'
+        />
+        <Wrapper gap='40px'  align='left' background={'transparent'}>
+          <Wrapper gap='16px' align='left' background={'transparent'}>
+            <BannerTitle>Фрибеты за купоны</BannerTitle>
+            <p>С 31 октября по 13 ноября собирай экспрессы в разделе «Спорт», получай купоны и обменивай их на фрибеты!</p>
+          </Wrapper>
+          <Link href='#make-bet' scroll={false}>
+            <Button alignSelf={'start'}>
+              Принять участие
+            </Button>
+            
+          </Link>
         </Wrapper>
-        <Button>Принять участие</Button>
       </Wrapper>
-        <Image src={bannerImage} alt='banner image'></Image>
     </StyledBanner>
   );
 };

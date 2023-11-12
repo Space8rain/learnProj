@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 const Nav = styled.nav`
-  background-color: black;
   & ul {
     list-style: none;
     font-size: 16px;

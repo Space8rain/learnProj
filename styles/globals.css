@@ -6,7 +6,7 @@
 }
 @font-face {
   font-family: 'Gilroy';
-  src: url(../src/fonts/Gilroy-Bold.otf);
+  src: url(../src/fonts/Gilroy-Medium.otf);
   font-weight: 700;
   font-style: normal;
 }
@@ -28,6 +28,7 @@ a {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 /* @media (prefers-color-scheme: dark) {
