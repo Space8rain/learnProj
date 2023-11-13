@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import Head from 'next/head';
-import { GlobalStyle, AppWrapper } from '../components/globalStyle/GlobalStyle';
+import { GlobalStyle, AppWrapper } from '../styles/GlobalStyle';
 
 
 function MyApp({ Component, pageProps }) {
