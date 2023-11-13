@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import basketball from '../src/images/basketball_black_image.png';
-import baseball from '../src/images/baseball_balck_image.png';
-import gamepad from '../src/images/gamepad_black_image.png';
-import Wrapper from './Wrapper';
-import Button from './Button';
-import BgImage from './BgImage';
+import football from '../../public/images/football_black_image.png';
+import baseball from '../../public/images/baseball_balck_image.png';
+import gamepad from '../../public/images/gamepad_black_image.png';
+import Wrapper from '../wrapper/Wrapper';
+import Button from '../button/Button';
+import BgImage from '../bgImage/BgImage';
 
 const listIcon = <svg xmlns="http://www.w3.org/2000/svg" width="8" height="16" viewBox="0 0 8 16" fill="none">
   <circle cx="4" cy="12" r="4" fill="#A1A1AA"/>
@@ -101,9 +101,9 @@ const MainPage = () => {
           </Button>
         </Wrapper>
           <BgImage 
-              imageUrl={basketball.src}
-              width={basketball.width}
-              height={basketball.height}
+              imageUrl={football.src}
+              width={football.width}
+              height={football.height}
               top='305px'
               left='-171px'
             />

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from 'styled-components';
-import Navigate from "./Navigate";
-import Logo from "./Logo";
+import Navigate from "../navigate/Navigate";
+import Logo from "../logo/Logo";
 
 interface HeaderProps {
   align?: string;

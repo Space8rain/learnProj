@@ -1,10 +1,9 @@
 import React from 'react';
-import Image from 'next/image';
 import styled from 'styled-components';
-import bannerImage from '../src/images/banner_image.png';
-import Wrapper from './Wrapper';
-import Button from './Button';
-import BgImage from './BgImage';
+import bannerImage from '../../public/images/banner_image.png';
+import Wrapper from '../wrapper/Wrapper';
+import Button from '../button/Button';
+import BgImage from '../bgImage/BgImage';
 import Link from 'next/link';
 
 

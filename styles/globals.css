@@ -1,12 +1,12 @@
 @font-face {
   font-family: 'Giorgio Sans LCG';
-  src: url(../src/fonts/Giorgio\ Sans\ LCG\ Bold.otf);
+  src: url(../public/fonts/Giorgio\ Sans\ LCG\ Bold.otf);
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
   font-family: 'Gilroy';
-  src: url(../src/fonts/Gilroy-Medium.otf);
+  src: url(../public/fonts/Gilroy-Medium.otf);
   font-weight: 700;
   font-style: normal;
 }
