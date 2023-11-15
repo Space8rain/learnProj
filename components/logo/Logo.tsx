@@ -4,9 +4,22 @@ import imageLogo from "../../public/images/logo.png";
 
 const Logo = () => {
   return (
-    <Link href='/' >
-      <Image src={imageLogo} alt="Logo" width={133} height={46} />
-    </ Link>
+    <Link href='/'>
+      <Image 
+        src={imageLogo}
+        alt="Logo"
+        width={imageLogo.width}
+        height={imageLogo.height}
+        layout="fixed"
+        // objectFit='cover'
+        // sizes="(max-width: 768px) 100vw, 33vw"
+        style={{
+          width: '115px',
+          height: 'auto',
+          // objectFit: "contain",
+        }}
+      />
+    </Link>
   )
 };
 

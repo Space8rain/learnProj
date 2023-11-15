@@ -4,11 +4,19 @@
   font-weight: 700;
   font-style: normal;
 }
+
 @font-face {
   font-family: 'Gilroy';
   src: url(../public/fonts/Gilroy-Medium.otf);
-  font-weight: 700;
+  font-weight: 400;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url(../public/fonts/Gilroy-Bold.otf);
+  font-weight: 700;
+  font-style: bold;
 }
 
 html,

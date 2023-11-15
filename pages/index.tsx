@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <Wrapper>
       <Header />
-      <Banner  background='var(--background-red)'/>
+      <Banner />
       <MainPage />
     </Wrapper> 
   )

@@ -6,6 +6,7 @@ import gamepad from '../../public/images/gamepad_black_image.png';
 import Wrapper from '../wrapper/Wrapper';
 import Button from '../button/Button';
 import BgImage from '../bgImage/BgImage';
+import Banner from '../banner/Banner';
 
 const listIcon = <svg xmlns="http://www.w3.org/2000/svg" width="8" height="16" viewBox="0 0 8 16" fill="none">
   <circle cx="4" cy="12" r="4" fill="#A1A1AA"/>
@@ -73,7 +74,7 @@ const MainPage = () => {
           padding={'32px 48px 56px'}
           background={'var(--background-foreground)'}
           borderRadius={'var(--border-r-X)'}
-          width='1216px'
+          maxWidth='min(1216px, 100% - 48px)'
         >
           <SecondTitle>Как принять участие?</SecondTitle>
           <Wrapper display={'grid'} gap={'48px'} align={'flex-start'}>
@@ -100,28 +101,28 @@ const MainPage = () => {
             Сделать ставку
           </Button>
         </Wrapper>
+
           <BgImage 
               imageUrl={football.src}
               width={football.width}
               height={football.height}
               top='305px'
-              left='-171px'
+              left='-150px'
             />
           <BgImage
             imageUrl={baseball.src}
             width={baseball.width}
             height={baseball.height}
             top='-64px'
-            left='668px'
+            left='655px'
             />
           <BgImage 
               imageUrl={gamepad.src}
               width={gamepad.width}
               height={gamepad.height}
-              top='268px'
-              left='1068px'
+              top='260px'
+              left='1025px'
             />
-        </Wrapper>
 
         <Wrapper 
           padding={'40px'}
@@ -129,6 +130,7 @@ const MainPage = () => {
           background={'var(--background-foreground)'}
           borderRadius={'var(--border-r-X)'}
           gap={'32px'}
+          maxWidth='min(1216px, 100% - 48px)'
         >
           <ThirdTitle>Правила акции</ThirdTitle>
           <Rules>
@@ -194,6 +196,7 @@ const MainPage = () => {
           >
             Оставить отзыв
           </Button>
+        </Wrapper>
         </Wrapper>
 
     </main>
