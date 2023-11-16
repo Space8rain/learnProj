@@ -6,7 +6,6 @@ import gamepad from '../../public/images/gamepad_black_image.png';
 import Wrapper from '../wrapper/Wrapper';
 import Button from '../button/Button';
 import BgImage from '../bgImage/BgImage';
-import Banner from '../banner/Banner';
 
 const listIcon = <svg xmlns="http://www.w3.org/2000/svg" width="8" height="16" viewBox="0 0 8 16" fill="none">
   <circle cx="4" cy="12" r="4" fill="#A1A1AA"/>
@@ -64,10 +63,45 @@ const Rules = styled.ul`
   }
 `;
 
+const DesktopPageContent = styled(Wrapper)`
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+
+const MobilePageContent = styled(Wrapper)`
+
+  margin-top: 60px;
+
+  ${SecondTitle} {
+    font-size: 48px;
+  }
+
+  ${Step} {
+    max-width: 100%;
+    justify-content: flex-start;
+  }
+
+  @media (min-width: 901px) {
+    display: none;
+  }
+
+  ${Rules} {
+    gap: 16px;
+    & li {
+      display: flex;
+      & svg {
+      flex-shrink: 0;
+      }
+    }
+  }
+`;
+
+
 const MainPage = () => {
   return (
     <main>
-      <Wrapper>
+      <DesktopPageContent>
         <Wrapper
           gap={'48px'}
           margin={'60px auto'}
@@ -197,7 +231,125 @@ const MainPage = () => {
             Оставить отзыв
           </Button>
         </Wrapper>
+        </DesktopPageContent>
+
+        {/* MOBILE LAYOUT */}
+
+        <MobilePageContent>
+        <Wrapper
+          gap='24px'
+          margin='60px auto 80px'
+          padding='24px 22px 42px'
+          background={'var(--background-foreground)'}
+          borderRadius={'var(--border-r-X)'}
+        >
+          <SecondTitle>Как принять участие?</SecondTitle>
+          <Wrapper display='' gap={'24px'} align={'flex-start'}>
+            <Step direction={'row'}>
+              <span>1</span>
+              <p>Собирай экспрессы с общим коэффициентом от 2.5 в разделе «Спорт»</p>
+            </Step>
+            <Step direction={'row'}>
+              <span>2</span>
+              <p>Получай купоны и гарантированные фрибеты за собранные экспрессы</p>
+            </Step>
+            <Step direction={'row'}>
+              <span>3</span>
+              <p>14 ноября в 15:00 (мск) подведём итоги акции и начислим фрибеты</p>
+            </Step>
+          </Wrapper>
+          <Button 
+            color={`var(--text-primary)`}
+            background={`var(--background-red)`}
+            fsize='18px'
+            fweight='100'
+            id='make-bet'
+          >
+            Сделать ставку
+          </Button>
         </Wrapper>
+
+          <BgImage 
+              imageUrl={gamepad.src}
+              width={gamepad.width}
+              height={gamepad.height}
+              top='-100px'
+              left='500px'
+            />
+
+        <Wrapper 
+          padding='40px'
+          align='flex-start'
+          background='var(--background-foreground)'
+          gap='16px'
+        >
+          <ThirdTitle>Правила акции</ThirdTitle>
+
+          <Rules>
+            <li>
+              {listIcon}
+              Ставки должны быть вида «экспресс»
+            </li>
+            <li>
+              {listIcon}
+              Ставки должны быть с денежного счёта
+            </li>
+            <li>
+              {listIcon}
+              Ставки принимаются на любое событие в разделе «Спорт»
+            </li>
+            <li>
+              {listIcon}
+              Ставки должны быть с общим коэффициентом не ниже 2.5
+            </li>
+            <li>
+              {listIcon}
+              Ставки должны быть рассчитаны в период с 31.10 (в 12:00) до 13.11 (в 23:59) включительно
+            </li>
+            <li>
+              {listIcon}
+              Призовые фрибеты будут начислены 14.11 в 15:00 (мск), в соответствии с количеством полученных купонов
+            </li>
+          </Rules>
+
+          <Button
+            background='transparent'
+            color='var(--text-secondary)'
+            width='100%'
+            fsize='24px'
+            gap='16px'
+          >
+            {buttonIcon}
+            Показать больше
+          </Button>
+
+          <Button
+            border='1px solid var(--border-medium)'
+            background='transparent'
+            color='var(--text-secondary)'
+            fsize='14px'
+            fweight='400'
+            padding='14px 0'
+            borderRadius='6px'
+            width='100%'
+          >
+            Узнать подробнее
+          </Button>
+
+          <Button
+            border='1px solid var(--border-medium)'
+            background='transparent'
+            color='var(--text-secondary)'
+            fsize='14px'
+            fweight='400'
+            padding='14px 0'
+            borderRadius='6px'
+            width='100%'
+          >
+            Оставить отзыв
+          </Button>
+        </Wrapper>
+        </MobilePageContent>
 
     </main>
   );

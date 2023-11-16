@@ -15,7 +15,7 @@ interface FlexProps {
   background?: string;
   gridTemplateColumns?: string;
   borderRadius?: string;
-}
+};
 
 const StyledWrapper = styled.div<FlexProps>`
   position: ${({position}) => position || 'relative'};
@@ -38,6 +38,6 @@ const Wrapper = (props) => {
   return (
     <StyledWrapper {...props} />
   );
-}
+};
 
 export default Wrapper;

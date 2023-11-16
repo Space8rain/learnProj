@@ -10,14 +10,6 @@ const Logo = () => {
         alt="Logo"
         width={imageLogo.width}
         height={imageLogo.height}
-        layout="fixed"
-        // objectFit='cover'
-        // sizes="(max-width: 768px) 100vw, 33vw"
-        style={{
-          width: '115px',
-          height: 'auto',
-          // objectFit: "contain",
-        }}
       />
     </Link>
   )

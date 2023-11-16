@@ -7,7 +7,16 @@ import BgImage from '../bgImage/BgImage';
 import Link from 'next/link';
 
 const WrapperBannerText = styled(Wrapper)`
+  gap: 16px;
 
+  @media (min-width: 768px) {
+    gap: 36px;
+  }
+`;
+
+const MobileBannerButton = styled(Button)`
+  height: 56px;
+  width: 100%;
 `;
 
 const BannerTitle = styled.h1`
@@ -79,7 +88,7 @@ const MobileBanner = styled(Wrapper)`
     font-family: var(--fonts-Gilroy);
     font-weight: var(--fonts-weights-bold);
   }
-`
+`;
 
 
 const Banner = (props) => {
@@ -109,26 +118,26 @@ const Banner = (props) => {
       </Wrapper>
     </DesktopBanner>
 
+    {/* MOBILE LAYOUT */}
+
     <MobileBanner justify='flex-start' {...props} >
     <BannerTitle>Фрибеты за купоны</BannerTitle>
 
       <Wrapper background={'var(--background-red)'} justify='flex-start' padding='24px 22px 0'>
-        <WrapperBannerText gap='16px' background={'transparent'}>
-          <Wrapper gap='16px' align='left' background={'transparent'}>
+        <WrapperBannerText background={'transparent'}>
             <p>С 31 октября по 13 ноября собирай экспрессы в разделе «Спорт», получай купоны и обменивай их на фрибеты!</p>
-          </Wrapper>
 
           <Link href='#make-bet' scroll={false}>
-            <Button width='100%' height='56px'>
+            <MobileBannerButton>
               Принять участие
-            </Button>
+            </MobileBannerButton>
           </Link>
         </WrapperBannerText>
         <BgImage
           position='relative'
           imageUrl={bannerImage.src}
-          // width={500}
-          // height={500}
+          height={416}
+          left='-100px'
         />
       </Wrapper>
     </MobileBanner>

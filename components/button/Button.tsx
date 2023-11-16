@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface ButtonProps {
+  gap?: string;
   border?: string;
   padding?: string;
   margin?: string;
@@ -16,7 +17,10 @@ interface ButtonProps {
 };
 
 const StyleButton = styled.button<ButtonProps>`
-  scrollBehavior:'smooth';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: ${({gap}) => gap || '0'};
   border: ${props => props.border || 'none'};
   cursor: pointer;
   padding: ${props => props.padding || '12px 20px'};
@@ -33,7 +37,7 @@ const StyleButton = styled.button<ButtonProps>`
   text-align: center;
   &:hover {
     transform: scale(1.02);
-  }
+  };
 `;
 
 const Button = (props) => {

@@ -42,18 +42,18 @@ const DesktopHeader = styled.header<HeaderProps>`
 `;
 
 const MobileHeader = styled.header<HeaderProps>`
+  display: flex;
+  max-width: min(1603px, 100% - 48px);
+  width: 100%;
+  height: ${props => props.height || '80px'};
+
   @media (min-width: 901px) {
     display: none;
-    align-items: ${props => props.align || 'center'};
-    justify-content: ${props => props.justify || 'space-between'};
-    background-color: ${props => props.background || 'black'};
-    max-width: min(1603px, 100% - 48px);
-    width: 100%;
-    height: ${props => props.height || '80px'};
-    font-family: var(--fonts-Lato);
-    font-weight: var(--fonts-weights-normal);
-    color: var(--text-primary);
   }
+`;
+
+const WrapperLogo = styled(Wrapper)`
+  width: 115px;
 `;
 
 
@@ -83,9 +83,13 @@ const Header = () => {
       </Wrapper>
     </DesktopHeader>
 
+    {/* MOBILE LAYOUT */}
+
     <MobileHeader height="64px">
-      <Wrapper direction='row' gap='16px' >
-        <Logo />
+      <Wrapper direction='row' gap='16px' justify='space-between' >
+        <WrapperLogo>
+          <Logo />
+        </WrapperLogo>
         <Button
           padding='6px 22px'
           color={'var(--text-on-light-bg)'}
